@@ -1,0 +1,119 @@
+/* Title section — soft purple theme with bold, clean typography */
+
+:root {
+  --soft-purple-bg: #f3e9ff;   /* very light lavender */
+  --soft-purple-ink: #6b4fc8;  /* soft, readable purple */
+  --soft-purple-accent: #8a6cff;
+  --ink-contrast: #2b2147;     /* deep eggplant for strong contrast */
+}
+
+.title-section {
+  /* layout */
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: clamp(2rem, 6vw, 5rem) 1.25rem;
+
+  /* visuals */
+  background:
+    radial-gradient(1200px 600px at 10% 0%, rgba(138,108,255,0.15), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(107,79,200,0.18), transparent 55%),
+    var(--soft-purple-bg);
+  color: var(--ink-contrast);
+
+  /* subtle rounded container feel if used full-width */
+  border-radius: 18px;
+}
+
+/* Large, bold headline */
+.title-section .title {
+  font-weight: 800;                 /* bold */
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--soft-purple-ink);
+
+  /* gentle text glow for depth */
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+  margin: 0 0 0.5rem 0;
+}
+
+/* Optional subtitle */
+.title-section .subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  line-height: 1.5;
+  color: #4b3a84;
+  max-width: 60ch;
+  margin: 0.25rem auto 1.25rem;
+}
+
+/* Accent underline element (optional) */
+.title-section .accent {
+  width: clamp(64px, 12vw, 140px);
+  height: 4px;
+  margin: 0.75rem auto 0;
+  background: linear-gradient(90deg, var(--soft-purple-accent), var(--soft-purple-ink));
+  border-radius: 999px;
+  opacity: 0.9;
+}
+
+/* Optional CTA group */
+.title-section .actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+
+.title-section .btn {
+  font-weight: 700;                 /* bold */
+  padding: 0.75rem 1.1rem;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  color: white;
+  background: linear-gradient(180deg, var(--soft-purple-accent), var(--soft-purple-ink));
+  box-shadow: 0 6px 18px rgba(107,79,200,0.25);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.title-section .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(107,79,200,0.32);
+  filter: brightness(1.03);
+}
+
+.title-section .btn.outline {
+  background: transparent;
+  color: var(--soft-purple-ink);
+  border-color: var(--soft-purple-ink);
+  box-shadow: none;
+}
+
+.title-section .btn.outline:hover {
+  background: rgba(138,108,255,0.08);
+}
+
+/* Dark-mode friendly tweak (optional) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --soft-purple-bg: #1b142b;
+    --ink-contrast: #ece7ff;
+  }
+  .title-section {
+    background:
+      radial-gradient(1200px 600px at 12% -10%, rgba(138,108,255,0.22), transparent 60%),
+      radial-gradient(900px 500px at 88% 0%, rgba(107,79,200,0.25), transparent 55%),
+      var(--soft-purple-bg);
+  }
+  .title-section .subtitle { color: #cfc6ff; }
+  .title-section .btn.outline { color: #ece7ff; border-color: #cfc6ff; }
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .title-section,
+  .title-section .btn {
+    transition: none;
+  }
+}
