@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=width, 
+    initial-scale=1.0">
+    <title>Daisy Bloom Studio's</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script scr ="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script scr="js/jquery.slicknav.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('nav_menu').slicknav({prependTo:"mobile_menu"});
+      });
+    </script>
+</head>
